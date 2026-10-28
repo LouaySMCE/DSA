@@ -43,4 +43,19 @@ public class MyArrays {
             array.set(minIndex, temp);
         }
         return array;
-    }}
+    }
+
+    public static List<Integer> insertionsort(List<Integer> array){
+        for (int i = 1; i < array.size(); i++) {
+            int temp = array.get(i);
+            int j = i - 1;
+
+            while (j>=0 && array.get(j) > temp) {
+                array.set(j + 1, array.get(j));
+                j--;
+            }
+            array.set(j+1, temp);
+        }
+        return array;
+    }
+}

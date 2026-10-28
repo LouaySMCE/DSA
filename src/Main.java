@@ -14,5 +14,7 @@ public class Main {
         System.out.println(MyArrays.bubblesort(list));
         System.out.println("=======================");
         System.out.println(MyArrays.selectionsort(list));
+        System.out.println("=======================");
+        System.out.println(MyArrays.insertionsort(list));
 }
 }
