@@ -12,5 +12,7 @@ public class Main {
         */
         List<Integer> list = new ArrayList<>(List.of(7,12,9,11,3,6,7,2,1,6));
         System.out.println(MyArrays.bubblesort(list));
+        System.out.println("=======================");
+        System.out.println(MyArrays.selectionsort(list));
 }
 }

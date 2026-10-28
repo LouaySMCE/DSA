@@ -30,4 +30,17 @@ public class MyArrays {
         }
         return array;
     }
-}
+
+    public static List<Integer> selectionsort(List<Integer> array){
+        for(int i=0;i<array.size()-1; i++){
+            int minIndex = i;
+            for(int j=i; j<array.size(); j++){
+                if(array.get(minIndex)>array.get(j)){
+                minIndex = j;}
+            }
+            int temp = array.get(i);
+            array.set(i, array.get(minIndex));
+            array.set(minIndex, temp);
+        }
+        return array;
+    }}
