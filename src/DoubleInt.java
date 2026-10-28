@@ -40,5 +40,4 @@ public class DoubleInt {
         }
         return "aucun élément unique";
     }
-
 }

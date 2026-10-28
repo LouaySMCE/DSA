@@ -17,6 +17,7 @@ public class Main {
         System.out.println(MyArrays.insertionsort(list));
          */
 
-        System.out.println(DoubleInt.FirstDup(List.of(4, 5,4,5)));
+        //System.out.println(DoubleInt.FirstDup(List.of(7, 3, 7, 5, 3, 9)));
+        System.out.println(StringOpr.AnagramCheck("chien","niche"));
 }
 }
