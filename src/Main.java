@@ -17,6 +17,6 @@ public class Main {
         System.out.println(MyArrays.insertionsort(list));
          */
 
-        System.out.println(DoubleInt.isdup(List.of(2, 5, 7, 2)));
+        System.out.println(DoubleInt.isdup_hash(List.of(3, 5, 7, 2)));
 }
 }

@@ -1,5 +1,7 @@
 import java.util.List;
 import java.util.Objects;
+import java.util.HashSet;
+import java.util.Set;
 
 public class DoubleInt {
     public static boolean isdup(List<Integer> array){
@@ -12,4 +14,15 @@ public class DoubleInt {
         }
         return false;
     }
+
+    public static boolean isdup_hash(List<Integer> array){
+        Set<Integer> seen = new HashSet<>();
+        for(int elm:array){
+            if (!seen.add(elm)){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
