@@ -25,4 +25,20 @@ public class DoubleInt {
         return false;
     }
 
+    public static String FirstDup(List<Integer> array){
+        Set<Integer> set_1 = new HashSet<>();
+        Set<Integer> set_2 = new HashSet<>();
+        for(int elm:array){
+            if (!set_1.add(elm)){
+                set_2.add(elm);
+            }
+        }
+        for(int elm: array){
+            if(!set_2.contains(elm)){
+                return String.valueOf(elm);
+            }
+        }
+        return "aucun élément unique";
+    }
+
 }
