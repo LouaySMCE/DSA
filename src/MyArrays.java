@@ -12,14 +12,20 @@ public class MyArrays {
         return mini;
     }
 
+    // Better bubblesort, the looping stops if the rest of the array is sorted
     public static List<Integer> bubblesort(List<Integer> array){
         for(int i=0; i< array.size()-1; i++) {
-            for (int j=0; j< array.size()-i-1; j++) {
+            boolean swapped = false;   // if no values are swapped, the loop stops
+            for (int j=0; j< array.size()-1-i; j++) {
                 if (array.get(j) > array.get(j+1)) {
                     int temp = array.get(j);
                     array.set(j, array.get(j + 1));
                     array.set(j + 1, temp);
+                    swapped = true;
                 }
+                }
+            if(!swapped){
+                break;
             }
         }
         return array;
