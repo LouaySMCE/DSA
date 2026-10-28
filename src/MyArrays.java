@@ -58,4 +58,19 @@ public class MyArrays {
         }
         return array;
     }
+
+    public static List<Integer> insertionsort_v2(List<Integer> array) {
+        for (int i = 1; i < array.size(); i++) {
+            for (int j = i; j > 0; j--) {
+                if (array.get(j) < array.get(j - 1)) {
+                    int temp = array.get(j);
+                    array.set(j, array.get(j - 1));
+                    array.set(j - 1, temp);
+                } else {
+                    break;
+                }
+            }
+        }
+        return array;
+    }
 }
