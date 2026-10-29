@@ -1,10 +1,6 @@
 import com.sun.jdi.Value;
-
 import java.security.Key;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class StringOpr {
     public static boolean AnagramCheck(String s, String t){
@@ -86,5 +82,58 @@ public class StringOpr {
 
         return isPalindrome(s, left +1, right -1);
 
+    }
+
+    public static int CharCounter(String s, char c){
+        int counter =0;
+        for(int i=0; i<s.length(); i++){
+            if(c==s.charAt(i)){
+                counter+=1;
+            }
+        }
+        return counter;
+    }
+
+    // entire code to correct
+    public static int FirstNonDupChar(String s){
+        HashMap<Character, Integer> c_counter = new HashMap<>();
+        List<Character> one_rec = new ArrayList<>();
+        int count =1;
+        for(int i=0; i<s.length(); i++){
+            if(!c_counter.containsKey(s.charAt(i))){
+                c_counter.put(s.charAt(i),count);
+            }
+            else{
+                count+=1;
+                c_counter.put(s.charAt(i),count);
+            }
+        }
+
+        boolean all_dup = false;
+        for(Integer i: c_counter.values()){
+            if (i > 1) {
+                all_dup = true;
+                break;
+            }
+        }
+        if(all_dup){
+            return -1;
+        }
+
+        for (Map.Entry<Character, Integer> entry : c_counter.entrySet()) {  //only way I found to retrieve a key from a value
+            if (entry.getValue() == 1) {
+                one_rec.add(entry.getKey());
+            }
+        }
+
+        int index =0;
+        for(int i=0; i<s.length(); i++){
+            for(char elm: one_rec){         // problem : the elements of the array may not be sorted because of the hashamap
+                if(s.charAt(i)==elm){
+                    index =i;
+                }
+            }
+        }
+        return index;
     }
 }

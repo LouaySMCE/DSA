@@ -24,5 +24,6 @@ public class Main {
         //System.out.println(Search.BinarySearch(1, array));
 
         System.out.println(Search.IsPrime_opti(6607));
+        System.out.println(StringOpr.CharCounter("banana",'a'));
 }
 }
