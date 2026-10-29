@@ -19,6 +19,8 @@ public class Main {
 
         //System.out.println(DoubleInt.FirstDup(List.of(7, 3, 7, 5, 3, 9)));
         //System.out.println(StringOpr.AnagramCheck("chien","niche"));
-        System.out.println(StringOpr.isPalindrome("radar" ));
+        //System.out.println(StringOpr.isPalindrome("radar" ));
+        int[] array = {1,2,3,4,5,6,7,8,9,10};
+        System.out.println(Search.BinarySearch(1, array));
 }
 }
