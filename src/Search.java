@@ -43,8 +43,8 @@ public class Search {
 
         int nRoot = (int) Math.sqrt(n);
 
-        for(int i=5; i< nRoot; i=i+6){
-            if(n%i==0 || n%(i+2)==0){  //we skip all even numbers and every 6 multiple
+        for(int i=5; i<= nRoot; i=i+6){
+            if(n%i==0 || n%(i+2)==0){  //we skip all even numbers and every 3 and 6 multiples
                 return false;
             }
         }
