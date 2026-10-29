@@ -18,6 +18,7 @@ public class Main {
          */
 
         //System.out.println(DoubleInt.FirstDup(List.of(7, 3, 7, 5, 3, 9)));
-        System.out.println(StringOpr.AnagramCheck("chien","niche"));
+        //System.out.println(StringOpr.AnagramCheck("chien","niche"));
+        System.out.println(StringOpr.isPalindrome("radar" ));
 }
 }
