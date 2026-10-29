@@ -33,7 +33,7 @@ public class DoubleInt {
                 set_2.add(elm);
             }
         }
-        for(int elm: array){
+        for(int elm: array){   // array search is better than set search to conserve order
             if(!set_2.contains(elm)){
                 return String.valueOf(elm);
             }
