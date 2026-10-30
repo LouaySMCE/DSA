@@ -120,4 +120,19 @@ public class StringOpr {
         }
         return -1;
     }
-}
+
+    public static int LongestSubstring(String s) {
+        HashSet<Character> charSet = new HashSet<>();
+        int maxLength =0;
+        int left =0;
+        for(int right=0; right<s.length();right++){
+
+            while(!charSet.add(s.charAt(right))){
+                charSet.remove(s.charAt(left));
+                left+=1;}
+
+            maxLength = Math.max(maxLength, right - left + 1);
+            }
+        return maxLength;
+        }
+    }
