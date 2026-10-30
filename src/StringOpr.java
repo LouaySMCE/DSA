@@ -94,46 +94,30 @@ public class StringOpr {
         return counter;
     }
 
-    // entire code to correct
     public static int FirstNonDupChar(String s){
         HashMap<Character, Integer> c_counter = new HashMap<>();
-        List<Character> one_rec = new ArrayList<>();
-        int count =1;
         for(int i=0; i<s.length(); i++){
             if(!c_counter.containsKey(s.charAt(i))){
-                c_counter.put(s.charAt(i),count);
+                c_counter.put(s.charAt(i),1);
             }
             else{
-                count+=1;
+                int count = c_counter.get(s.charAt(i)) + 1;
                 c_counter.put(s.charAt(i),count);
             }
         }
-
-        boolean all_dup = false;
-        for(Integer i: c_counter.values()){
-            if (i > 1) {
-                all_dup = true;
-                break;
-            }
-        }
-        if(all_dup){
-            return -1;
-        }
-
+        /*
         for (Map.Entry<Character, Integer> entry : c_counter.entrySet()) {  //only way I found to retrieve a key from a value
             if (entry.getValue() == 1) {
                 one_rec.add(entry.getKey());
             }
         }
-
-        int index =0;
+        */
         for(int i=0; i<s.length(); i++){
-            for(char elm: one_rec){         // problem : the elements of the array may not be sorted because of the hashamap
-                if(s.charAt(i)==elm){
-                    index =i;
-                }
+            int freq = c_counter.get(s.charAt(i));
+            if(freq ==1){
+            return i;
             }
         }
-        return index;
+        return -1;
     }
 }
