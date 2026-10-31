@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Search {
     public static int BinarySearch(int target , int[] array){
         int left = 0;
@@ -49,5 +51,25 @@ public class Search {
             }
         }
         return true;
+    }
+
+    public static int MaxSum(int[] array, int k){
+        if(k>=array.length){
+            return Arrays.stream(array).sum();
+        }
+        int current_max =0;
+
+        for(int i=0; i<k;i++){
+            current_max = current_max + array[i];
+        }
+
+        int max =current_max;
+
+        for(int right =k; right<array.length; right++){
+            current_max = current_max - array[right-k];
+            current_max = current_max + array[right];
+            max = Math.max(current_max,max);
+        }
+        return max;
     }
 }
