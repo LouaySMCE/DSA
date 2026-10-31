@@ -72,4 +72,30 @@ public class Search {
         }
         return max;
     }
+
+    public static int MinSubArrayLen(int[] array, int target){
+        int left = 0;
+        int currentSum = 0;
+        int minLength = Integer.MAX_VALUE;
+
+        for(int right=0; right< array.length; right++){
+            currentSum = currentSum + array[right];
+            while(currentSum>=target){
+                currentSum = currentSum - array[left];
+                minLength = Math.min(minLength, right-left+1);
+                left++;
+            }
+        }
+        return minLength == Integer.MAX_VALUE ? 0 : minLength;
+    }
+
+    public static int SearchGCD(int a, int b){
+        int temp;
+        while(a%b!=0){
+            temp =b;
+            b = a%b;
+            a = temp;
+        }
+        return b;
+    }
 }

@@ -1,4 +1,4 @@
-public class FibonacciClass {
+public class Recursion {
 
     // Fibonacci by loop
     public static void FibonacciLoop(int n) {

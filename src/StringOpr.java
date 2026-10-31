@@ -94,6 +94,7 @@ public class StringOpr {
         return counter;
     }
 
+    // Hashmap, array
     public static int FirstNonDupChar(String s){
         HashMap<Character, Integer> c_counter = new HashMap<>();
         for(int i=0; i<s.length(); i++){
@@ -121,6 +122,7 @@ public class StringOpr {
         return -1;
     }
 
+    // sliding window
     public static int LongestSubstring(String s) {
         HashSet<Character> charSet = new HashSet<>();
         int maxLength =0;
