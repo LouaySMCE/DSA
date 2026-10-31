@@ -115,4 +115,21 @@ public class Search {
         }
         return missing;
     }
+
+    public static List<Integer> TwoSums(int[] array, int target) {
+        HashMap<Integer, Integer> hashmap = new HashMap<>();
+        List<Integer> result = new ArrayList<>();
+
+        for (int i = 0; i < array.length; i++) {
+            int diff = target - array[i];
+
+            if (hashmap.containsKey(diff)) {
+                result.add(hashmap.get(diff));
+                result.add(i);
+                return result;
+            }
+            hashmap.put(array[i], i);
+        }
+        return result;
+    }
 }
