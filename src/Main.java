@@ -23,7 +23,9 @@ public class Main {
         //int[] array = {1,2,3,4,5,6,7,8,9,10};
         //System.out.println(Search.BinarySearch(1, array));
 
-        System.out.println(Search.IsPrime_opti(6607));
-        System.out.println(StringOpr.CharCounter("banana",'a'));
+        //System.out.println(Search.IsPrime_opti(6607));
+        //System.out.println(StringOpr.CharCounter("banana",'a'));
+
+        System.out.println(Search.AllMissing(new int[]{4, 3, 2, 7, 8, 2, 3, 1}));
 }
 }

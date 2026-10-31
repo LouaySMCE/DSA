@@ -1,3 +1,4 @@
+import java.util.*;
 import java.util.Arrays;
 
 public class Search {
@@ -97,5 +98,21 @@ public class Search {
             a = temp;
         }
         return b;
+    }
+
+    public static List<Integer> AllMissing(int[] array){
+        List<Integer> missing = new ArrayList<>();
+        HashSet<Integer> set = new HashSet<>();
+
+        for(int num : array){
+            set.add(num);
+        }
+
+        for(int i=1; i<array.length; i++){
+            if(!set.contains(i)){
+                missing.add(i);
+            }
+        }
+        return missing;
     }
 }
