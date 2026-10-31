@@ -39,5 +39,23 @@ public class Recursion {
         }
     }
 
+    public static int RecArraySum(int[] array, int index){
+        if(index< array.length){
+            return array[index]+ RecArraySum(array, index+1);
+        }
+        else{
+            return 0;
+        }
+    }
+
+    public static int RecursiveSearch(int[] array, int target, int index){
+        if (index >= array.length){
+            return -1;
+        }
+        if(array[index]==target){
+            return index;
+        }
+        return RecursiveSearch(array, target,index+1);
+    }
 }
 
