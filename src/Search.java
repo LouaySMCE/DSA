@@ -155,4 +155,21 @@ public class Search {
         }
         return result;
     }
+
+    public static List<Integer> smallerNumbersThanCurrent_v2(int[] array){
+        List<Integer> result = new ArrayList<>();
+        HashMap<Integer, Integer> hashmap = new HashMap<>();
+        int[] copied = array.clone();
+        Arrays.sort(copied);
+
+        for (int j=0; j<copied.length;j++) {
+                hashmap.put(copied[j],j);
+        }
+
+        for(int elm:array){
+            result.add(hashmap.get(elm));
+        }
+
+        return result;
+    }
 }
