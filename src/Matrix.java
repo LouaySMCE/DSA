@@ -44,7 +44,6 @@ public class Matrix {
                 left++;
             }
         }
-
         return result;
     }
 }

@@ -27,11 +27,14 @@ public class Main {
         //System.out.println(StringOpr.CharCounter("banana",'a'));
 
         //System.out.println(Search.AllMissing(new int[]{4, 3, 2, 7, 8, 2, 3, 1}));
+        /*
         System.out.println(
                 Matrix.SpiralOrder(new int[][]{
                         {1, 2, 3},
                         {4, 5, 6}
                 })
         );
+        */
+        System.out.println(StackProblems.isValidParentheses("(]"));
 }
 }
