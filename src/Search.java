@@ -169,7 +169,15 @@ public class Search {
         for(int elm:array){
             result.add(hashmap.get(elm));
         }
-
         return result;
+    }
+
+    public static int minTimeToVisitAllPoints(int[][] points){
+        double cumulative_time=0;
+        for(int p=0; p<points.length-1;p++){
+            //cumulative_time = cumulative_time + Math.sqrt((points[p][0]-points[p+1][0])*(points[p][0]-points[p+1][0])+(points[p][1]-points[p+1][1])*(points[p][1]-points[p+1][1]));
+            cumulative_time = cumulative_time + Math.max(Math.abs(points[p][0]-points[p+1][0]), Math.abs(points[p][1]-points[p+1][1]));
+        }
+        return (int) cumulative_time;
     }
 }
