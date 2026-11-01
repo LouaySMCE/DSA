@@ -132,4 +132,27 @@ public class Search {
         }
         return result;
     }
+
+    public static List<Integer> smallerNumbersThanCurrent_v1(int[] array){
+        List<Integer> result = new ArrayList<>();
+        HashMap<Integer, Integer> hashmap = new HashMap<>();
+
+        for (int j : array) {
+            if (!hashmap.containsKey(j)) {
+                hashmap.put(j, 1);
+            } else {
+                hashmap.put(j, hashmap.get(j) + 1);
+            }
+        }
+        for (int j : array) {
+            int count = 0;
+            for (int key : hashmap.keySet()) {
+                if (j > key) {
+                    count = count + hashmap.get(key);
+                }
+            }
+            result.add(count);
+        }
+        return result;
+    }
 }
