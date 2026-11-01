@@ -1,22 +1,20 @@
-import java.util.HashMap;
-import java.util.Stack;
+import java.util.*;
 
-public class StackProblems {
-    public static boolean isValidParentheses(String s){
-        if(s.length()%2!=0){
+public class MinStack {
+    public static boolean isValidParentheses(String s) {
+        if (s.length() % 2 != 0) {
             return false;
         }
         Stack<String> mystack = new Stack<>();
-        HashMap<String,String> matching = new HashMap<>();
-        matching.put(")","(");
-        matching.put("]","[");
-        matching.put("}","{");
-        for(int i=0;i<s.length();i++){
+        HashMap<String, String> matching = new HashMap<>();
+        matching.put(")", "(");
+        matching.put("]", "[");
+        matching.put("}", "{");
+        for (int i = 0; i < s.length(); i++) {
             String current = String.valueOf(s.charAt(i));
             if (matching.containsValue(current)) {
                 mystack.push(current);
-            }
-            else if (matching.containsKey(current)) {
+            } else if (matching.containsKey(current)) {
                 if (mystack.isEmpty()) {
                     return false;
                 }
