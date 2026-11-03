@@ -18,6 +18,8 @@ public class SinglyLinkedList {
         }
     }
 
+
+    // traversal linked list
     public static void printSinglyLinked(SinglyLinkedList mylist){
         Node current = mylist.head;
         if(current==null){
@@ -32,4 +34,21 @@ public class SinglyLinkedList {
         }
     }
 
+    public int lowestValue(SinglyLinkedList mylist){
+        Node current = mylist.head;
+        if(current==null){
+            System.out.println("empty list");
+            return 0;
+        }
+        else{
+            int lowest = current.data;
+            while(current!= null){
+                if(current.data < lowest){
+                    lowest = current.data;
+                }
+                current = current.next;
+            }
+            return lowest;
+        }
+    }
 }
