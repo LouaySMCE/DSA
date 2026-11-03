@@ -1,15 +1,14 @@
 public class SinglyLinkedList {
     Node head;
 
-    SinglyLinkedList(Node head){
+    SinglyLinkedList(Node head) {
         this.head = head;
     }
 
     public void addNode(Node addedNode) {
         if (head == null) {
             head = addedNode;
-        }
-        else {
+        } else {
             Node current = this.head;
             while (current.next != null) {
                 current = current.next;
@@ -20,13 +19,12 @@ public class SinglyLinkedList {
 
 
     // traversal linked list
-    public static void printSinglyLinked(SinglyLinkedList mylist){
+    public static void printSinglyLinked(SinglyLinkedList mylist) {
         Node current = mylist.head;
-        if(current==null){
+        if (current == null) {
             System.out.println("empty list");
-        }
-        else{
-            while(current != null){
+        } else {
+            while (current != null) {
                 System.out.println(current.data + "->");
                 current = current.next;
             }
@@ -34,21 +32,38 @@ public class SinglyLinkedList {
         }
     }
 
-    public int lowestValue(SinglyLinkedList mylist){
+    public int lowestValue(SinglyLinkedList mylist) {
         Node current = mylist.head;
-        if(current==null){
+        if (current == null) {
             System.out.println("empty list");
             return 0;
-        }
-        else{
+        } else {
             int lowest = current.data;
-            while(current!= null){
-                if(current.data < lowest){
+            while (current != null) {
+                if (current.data < lowest) {
                     lowest = current.data;
                 }
                 current = current.next;
             }
             return lowest;
         }
+    }
+
+    public void deleteValue(int value) {
+        if (this.head == null) {
+            return;
+        }
+        if (head.data == value) {
+            head = head.next;
+            return;
+        }
+        Node current = this.head;
+        while(current.next != null && current.next.data!=value){
+            current = current.next;
+        }
+        if(current.next == null){
+            return;
+        }
+        current.next =current.next.next;
     }
 }
