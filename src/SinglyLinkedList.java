@@ -17,10 +17,9 @@ public class SinglyLinkedList {
         }
     }
 
-
     // traversal linked list
-    public static void printSinglyLinked(SinglyLinkedList mylist) {
-        Node current = mylist.head;
+    public void printSinglyLinked() {
+        Node current = this.head;
         if (current == null) {
             System.out.println("empty list");
         } else {
@@ -32,8 +31,8 @@ public class SinglyLinkedList {
         }
     }
 
-    public int lowestValue(SinglyLinkedList mylist) {
-        Node current = mylist.head;
+    public int lowestValue() {
+        Node current = this.head;
         if (current == null) {
             System.out.println("empty list");
             return 0;
@@ -67,7 +66,7 @@ public class SinglyLinkedList {
         current.next =current.next.next;
     }
 
-    public int lenghtList(){
+    public int lengthList(){
         if(this.head == null){
             return 0;
         }
@@ -95,7 +94,7 @@ public class SinglyLinkedList {
             this.head = newNode;
             return;
         }
-        if(position > this.lenghtList()){
+        if(position > this.lengthList()){
             Node current = this.head;
             while(current.next!=null){
                 current = current.next;
