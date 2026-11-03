@@ -1,10 +1,10 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class RecentCounter {
+public class QueueRecentCounter {
     private Queue<Integer> counter = new LinkedList<>();
 
-    public RecentCounter() {
+    public QueueRecentCounter() {
         counter = new LinkedList<>();
     }
 
