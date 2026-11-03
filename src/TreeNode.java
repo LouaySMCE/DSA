@@ -1,3 +1,7 @@
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 public class TreeNode {
     int val;
     TreeNode left;
@@ -8,6 +12,14 @@ public class TreeNode {
         this.left = null;
         this.right = null;
     }
+    TreeNode() {
+    }
+
+    TreeNode(int val, TreeNode left, TreeNode right) {
+          this.val = val;
+          this.left = left;
+          this.right = right;
+      }
 
     public static void inorderDFS(TreeNode root) {
         if (root == null) {
@@ -38,7 +50,8 @@ public class TreeNode {
         System.out.println(root.val);
     }
 
-    public static void traversalBFS(TreeNode root) {
+    public static List<List<Integer>> BFS(TreeNode root) {
+        Queue<Integer> queue = new LinkedList<>();
 
     }
 }
