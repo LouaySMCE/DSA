@@ -79,5 +79,22 @@ public class TreeNode {
         return fianlist;
     }
 
+    public static TreeNode insert(TreeNode root, int value) {
+        if (root == null) {
+            return new TreeNode(value);
+        }
 
+        if (value < root.val) {
+            root.left = insert(root.left, value);
+        } else if (value > root.val) {
+            root.right = insert(root.right, value);
+        }
+
+        return root;
+    }
+
+
+    public static boolean search(TreeNode root, int target){
+
+    }
 }
