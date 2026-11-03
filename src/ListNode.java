@@ -23,4 +23,26 @@ public class ListNode {
         }
         return slow;
     }
+
+    public ListNode lastNode(ListNode head){
+        ListNode current = head;
+        while(current!=null){
+            current = current.next;
+        }
+        return current;
+    }
+
+    public ListNode reverseList(ListNode head) {
+        ListNode previous = null;
+        ListNode current = head;
+        while (current != null) {
+            ListNode prochain = current.next;
+            current.next = previous;
+            previous = current;
+            current = prochain;
+        }
+        return previous;
+    }
+
+
 }
