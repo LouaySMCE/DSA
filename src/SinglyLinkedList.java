@@ -66,4 +66,45 @@ public class SinglyLinkedList {
         }
         current.next =current.next.next;
     }
+
+    public int lenghtList(){
+        if(this.head == null){
+            return 0;
+        }
+        else{
+            int count=0;
+            Node current = this.head;
+            while(current!=null){
+                count++;
+                current = current.next;
+            }
+            return  count;
+        }
+    }
+    public void insertValue(int value, int position){
+        if(position==1){
+            Node current_head = this.head;
+            Node newNode = new Node(value);
+            newNode.next = current_head;
+            this.head = newNode;
+            return;
+        }
+        if(position > this.lenghtList()){
+            Node current = this.head;
+            while(current.next!=null){
+                current = current.next;
+            }
+            current.next = new Node(value);
+            return;
+        }
+        int count =1;
+        Node current = this.head;
+        while(count!=position){
+            current = current.next;
+            count++;
+        }
+        Node toInsert = new Node(value);
+        toInsert.next = current;
+        current.next = current.next.next;
+    }
 }
