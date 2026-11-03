@@ -83,18 +83,26 @@ public class TreeNode {
         if (root == null) {
             return new TreeNode(value);
         }
-
         if (value < root.val) {
             root.left = insert(root.left, value);
         } else if (value > root.val) {
             root.right = insert(root.right, value);
         }
-
         return root;
     }
 
-
     public static boolean search(TreeNode root, int target){
-
+        if(root == null){
+            return false;
+        }
+        if(root.val == target){
+            return true;
+        }
+        if(root.val < target){
+            return search(root.right, target);
+        }
+        return search(root.left, target);
     }
+
+
 }
