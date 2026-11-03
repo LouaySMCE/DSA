@@ -112,6 +112,4 @@ public class SinglyLinkedList {
         toInsert.next =current.next;
         current.next = toInsert;
     }
-
-
 }
