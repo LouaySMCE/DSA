@@ -9,32 +9,36 @@ public class TreeNode {
         this.right = null;
     }
 
-    public static void inorder(TreeNode root) {
+    public static void inorderDFS(TreeNode root) {
         if (root == null) {
             return;
         }
 
-        inorder(root.left);
+        inorderDFS(root.left);
         System.out.println(root.val);
-        inorder(root.right);
+        inorderDFS(root.right);
     }
 
-    public static void preorder(TreeNode root) {
+    public static void preorderDFS(TreeNode root) {
         if (root == null) {
             return;
         }
 
         System.out.println(root.val);
-        preorder(root.left);
-        preorder(root.right);
+        preorderDFS(root.left);
+        preorderDFS(root.right);
     }
 
-    public static void postorder(TreeNode root) {
+    public static void postorderDFS(TreeNode root) {
         if (root == null) {
             return;
         }
-        postorder(root.left);
-        postorder(root.right);
+        postorderDFS(root.left);
+        postorderDFS(root.right);
         System.out.println(root.val);
+    }
+
+    public static void traversalBFS(TreeNode root) {
+
     }
 }
