@@ -82,6 +82,12 @@ public class SinglyLinkedList {
         }
     }
     public void insertValue(int value, int position){
+        if (this.head == null) {
+            if (position == 1) {
+                this.head = new Node(value);
+            }
+            return;
+        }
         if(position==1){
             Node current_head = this.head;
             Node newNode = new Node(value);
@@ -99,12 +105,12 @@ public class SinglyLinkedList {
         }
         int count =1;
         Node current = this.head;
-        while(count!=position){
+        while(count<position-1){
             current = current.next;
             count++;
         }
         Node toInsert = new Node(value);
-        toInsert.next = current;
-        current.next = current.next.next;
+        toInsert.next =current.next;
+        current.next = toInsert;
     }
 }
