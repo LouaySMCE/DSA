@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -51,7 +52,32 @@ public class TreeNode {
     }
 
     public static List<List<Integer>> BFS(TreeNode root) {
-        Queue<Integer> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        List<List<Integer>> fianlist = new ArrayList<>();
 
+        if(root==null){
+            return fianlist;
+        }
+
+        queue.offer(root);
+
+        while(!queue.isEmpty()){
+            int len = queue.size();
+            List<Integer> currentLevel = new ArrayList<>();
+            for (int i = 0; i < len; i++) {
+                TreeNode current = queue.poll();
+                currentLevel.add(current.val);
+                if (current.left != null) {
+                    queue.offer(current.left);
+                }
+                if (current.right != null) {
+                    queue.offer(current.right);
+                }
+            }
+            fianlist.add(currentLevel);
+        }
+        return fianlist;
     }
+
+
 }
