@@ -17,4 +17,19 @@ public class SinglyLinkedList {
             current.next = addedNode;
         }
     }
+
+    public static void printSinglyLinked(SinglyLinkedList mylist){
+        Node current = mylist.head;
+        if(current==null){
+            System.out.println("empty list");
+        }
+        else{
+            while(current != null){
+                System.out.println(current.data + "->");
+                current = current.next;
+            }
+            System.out.println("null");
+        }
+    }
+
 }
