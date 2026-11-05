@@ -96,25 +96,25 @@ public class StringOpr {
 
     // Hashmap, array
     public static int FirstNonDupChar(String s){
-        HashMap<Character, Integer> c_counter = new HashMap<>();
+        HashMap<Character, Integer> MyHash = new HashMap<>();
         for(int i=0; i<s.length(); i++){
-            if(!c_counter.containsKey(s.charAt(i))){
-                c_counter.put(s.charAt(i),1);
+            if(!MyHash.containsKey(s.charAt(i))){
+                MyHash.put(s.charAt(i),1);
             }
             else{
-                int count = c_counter.get(s.charAt(i)) + 1;
-                c_counter.put(s.charAt(i),count);
+                int count = MyHash.get(s.charAt(i)) + 1;
+                MyHash.put(s.charAt(i),count);
             }
         }
         /*
-        for (Map.Entry<Character, Integer> entry : c_counter.entrySet()) {  //only way I found to retrieve a key from a value
+        for (Map.Entry<Character, Integer> entry : MyHash.entrySet()) {  //only way I found to retrieve a key from a value
             if (entry.getValue() == 1) {
                 one_rec.add(entry.getKey());
             }
         }
         */
         for(int i=0; i<s.length(); i++){
-            int freq = c_counter.get(s.charAt(i));
+            int freq = MyHash.get(s.charAt(i));
             if(freq ==1){
             return i;
             }

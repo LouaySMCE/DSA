@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class MyArrays {
@@ -72,5 +75,21 @@ public class MyArrays {
             }
         }
         return array;
+    }
+
+    public static List<Integer> SortFromIndex(int[] array, int index){
+        List<Integer> array_b = new ArrayList<>();
+        List<Integer> array_sort = new ArrayList<>();
+        for(int i =0; i<index;i++){
+            array_b.add(array[i]);
+        }
+        for(int i =index; i<array.length;i++){
+            array_sort.add(array[i]);
+        }
+        Collections.sort(array_sort);
+
+        List<Integer> res = new ArrayList<>(array_b);
+        res.addAll(array_sort);
+        return res;
     }
 }
