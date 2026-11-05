@@ -33,6 +33,8 @@ public class Main {
                 })
         );
         */
-        System.out.println(MinStack.isValidParentheses("(]"));
+        //System.out.println(MinStack.isValidParentheses("(]"));
+        int[] array = {3,1,4,5,2,3};
+        System.out.println(Search.MinSubArrayLen(array,8));
 }
 }

@@ -82,8 +82,8 @@ public class Search {
         for(int right=0; right< array.length; right++){
             currentSum = currentSum + array[right];
             while(currentSum>=target){
-                currentSum = currentSum - array[left];
                 minLength = Math.min(minLength, right-left+1);
+                currentSum = currentSum - array[left];
                 left++;
             }
         }
